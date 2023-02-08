@@ -6,7 +6,7 @@ module "public_services_sg" {
   description = "Allow access to public services i.e port 80"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
-
+  ingress_cidr_blocks      = ["0.0.0.0/0"]
   ingress_rules = ["all-all"]
 
   # Method 2

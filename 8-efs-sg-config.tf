@@ -6,8 +6,8 @@ module "efs_services_sg" {
   description = "Allow access to efs services"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
+  ingress_cidr_blocks      = ["0.0.0.0/0"]
   ingress_rules = ["all-all"]
   egress_rules  = ["all-all"]
-
 
 }
