@@ -5,10 +5,9 @@ module "db_services_sg" {
   name        = "db-services-sg"
   description = "Allow access to db services"
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
-
-  ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules= ["all-all"]
-  egress_rules = ["all-all"]
-
+  
+  ingress_cidr_blocks      = ["0.0.0.0/0"]
+  ingress_rules = ["all-all"]
+  egress_rules  = ["all-all"]
 
 }

@@ -28,10 +28,30 @@ output "app_services_sg_arn" {
   value = module.app_services_sg.security_group_arn
 }
 
+output "app_services_sg_name" {
+  value = module.app_services_sg.security_group_name
+}
+
+output "app_services_sg_description" {
+  value = module.app_services_sg.security_group_description
+}
+
 
 # Database Services Security Group
 output "db_services_sg_id" {
   value = module.db_services_sg.security_group_id
+}
+
+output "db_services_sg_arn" {
+  value = module.db_services_sg.security_group_arn
+}
+
+output "db_services_sg_name" {
+  value = module.db_services_sg.security_group_name
+}
+
+output "db_services_sg_description" {
+  value = module.db_services_sg.security_group_description
 }
 
 
@@ -39,5 +59,18 @@ output "db_services_sg_id" {
 output "efs_services_sg_id" {
   value = module.efs_services_sg.security_group_id
 }
+
+output "efs_services_sg_arn" {
+  value = module.efs_services_sg.security_group_arn
+}
+
+output "efs_services_sg_name" {
+  value = module.efs_services_sg.security_group_name
+}
+
+output "efs_services_sg_description" {
+  value = module.efs_services_sg.security_group_description
+}
+
 
 
