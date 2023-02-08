@@ -7,25 +7,24 @@ module "public_services_sg" {
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
 
-   ingress_with_cidr_blocks = [
+  ingress_with_cidr_blocks = [
     {
-      from_port   = 0
       to_port     = 80
       protocol    = "tcp"
       description = "Port80 for Loadbalancer"
       cidr_blocks = "0.0.0.0/0"
-    }]
+  }]
 
-    # # Method 1
-    # egress_cidr_blocks = [
-    # {
-    #   from_port   = 0
-    #   to_port     = 0
-    #   protocol    = "-1"
-    #   description = "Allow all outbound traffic"
-    #   cidr_blocks = "0.0.0.0/0"}]
+  # # Method 1
+  # egress_cidr_blocks = [
+  # {
+  #   from_port   = 0
+  #   to_port     = 0
+  #   protocol    = "-1"
+  #   description = "Allow all outbound traffic"
+  #   cidr_blocks = "0.0.0.0/0"}]
 
-    # Method 2
-    egress_rules = ["all-all"]
+  # Method 2
+  egress_rules = ["all-all"]
 
 }
