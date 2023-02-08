@@ -7,20 +7,8 @@ module "efs_services_sg" {
   vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules       = ["nfs-2049-tcp", "nfs-2049-udp"]
-  ingress_with_cidr_blocks = [
-    {
-      from_port   = 2049
-      to_port     = 2049
-      protocol    = "tcp"
-      description = "NFS"
-      cidr_blocks = "0.0.0.0/0"
-    },
-    {
-      rule        = "nfs-2049-udp"
-      cidr_blocks = "0.0.0.0/0"
-  }]
-
+  ingress_rules       = ["all-all"]
   egress_rules = ["all-all"]
 
 }
+
